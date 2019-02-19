@@ -1,0 +1,92 @@
+Most statistical analysis of genomic
+data should be done interactively. And what we usually mean
+by that is by using plots. Another way of saying this is
+that you should take big data and make it as small as possible,
+as quickly as possible. This is a quote attributed to
+Robert Gentleman at Genentech. And what he was trying to say is that
+if you have a gigantic data set, say, made of millions or billions of reads, it's very hard to visualize what's
+going on with those data or understand the different properties or
+the characteristics of those data. And so the idea is you want to summarize
+them down just enough that you're able to plot them and visualize them and
+try to figure out what's going on. And it's really important to do
+interactive analysis with lots of plotting, because sometimes
+the summary measures, the statistical summary measures
+that are often reported, say for associations can be
+a little bit deceptive. As an example of that,
+here are four plots. Each plot corresponds to
+a different data set. Each of these data sets seems
+statistically identical if you look at the coefficient for the slope,
+the p-value for the slope, or the correlation coefficient. So all of these data sets from
+the perspective of statistical summary measures are identical. But as you can see, there seem to be very different patterns
+going on in these different data sets. For example, the pattern in the upper
+right-hand corner looks a bit like sort of a quadratic shape. The pattern in the lower left-hand
+corner has a clear outlier, and so does the panel in the lower right-hand
+corner in a totally different direction. And so the idea is the thing that you
+want to be doing is taking your summaries of your raw data and plotting them as
+quickly as possible, so you can try to identify characteristics or features
+of the data that might be important. So interactivity allows for
+more discovery. And so one thing that you want to do
+when doing an interactive analysis, where you're trying to
+discover what's going on, is show as much of the data
+as you can in your plots. So here's an example. On the left is what I
+would call a bad plot. And lots of people,
+particularly statisticians, don't like plots like this because it
+shows bar plots with confidence bounds. But those bar plots don't show
+any of the actual raw data. So it's very hard to know if there was
+an outlier driving any of the analysis or how many data points were even
+used to create these bar plots. On the other hand, on the right-hand side,
+there's a much better plot. It shows the same information as the bar
+plot in terms of showing the average value in the confidence bounds, but
+it also shows the raw data. So you can actually see when there's
+differences in distributions. And in this case,
+there's only three points in each group. So you might have a little bit less faith
+in any conclusion you might draw than you might get from using the bad plot, where you don't actually know
+how much data is in the plot. Another thing that you might
+do is plot replicates. This is a very common plot that
+you would do when you're doing an interactive analysis. So here you might want to compare, say, you ran the same sample through the
+technology twice, technical replicates. And you want to see if those two
+replicates produce similar results. So here's a plot on x,
+the x-axis is replicate one, and on the y-axis is replicate two. And so here, they look very,
+very correlated. So that's very good, you might see
+this and be comforted or think, okay, this technology is doing very well. There's a couple of tricky things, though,
+especially about plotting replicates. So the first thing is be careful of scale. So if you go back to this plot, 99% of the
+data is in the tiny little lower left-hand corner that I've shown below to, below and
+to the left of the light blue line here. So what you're seeing, just sort of the 1% of the data
+that ends up getting spread out. So one way that you can deal with
+this sort of tightly clustered data, particularly for replicates,
+is to use transforms. One example of a data transform
+is the log transform. So if you take the log of the data and then make the same plot,
+you can see they're correlated. But now the data is much more spread out
+and all of the data that was super tightly clustered down in the lower left-hand
+corner has been spread out a little bit. You get a little bit better idea
+about what's going on in the plot. Another thing that people typically
+do when comparing two samples or two replicates is instead of plotting
+one replicate versus the other, they make something that's
+called a Bland-Altman plot. In genomics, this is often called an MA
+plot, and this is one of the most common plots and widely used in
+a variety of different technologies. So the idea here is rather than plotting
+replicate one on the x-axis and replicate two on the y-axis, you add
+the two replicates on the x-axis and you subtract the two re,
+replicates on the y-axis. So what does this mean? Moving from left to right are the,
+in this case, it's gene, each dot represents a gene. On the left-hand side are the genes
+that are very lowly expressed. And on the right-hand side are the genes
+that are very highly expressed. Then if you look at the y-axis, how far you are from zero is how different
+the two replicates are from each other. And so what you would like to see is all
+the points lining exactly on the zero line, which obviously never
+happens in real life. But what you can see here is,
+for example, a trend. There seem to be more differences
+between the replicates for the lowly expressed genes. This is a very common phenomenon. And so it's better to see that
+when you make the MA style plot as opposed to making the plot of
+one replicate versus the other. One thing that you should
+be very careful of, and is a very common problem in genomics,
+is what has been coined ridiculograms. So a ridiulogram is defined as,
+in general, it can be something a little
+bit more general than this. But it has been defined as a network plot
+that looks beautiful but communicates very little information and appears on
+the cover of Science and Nature. And so what these plots are, you often
+see these sort of hairball-type plots. There are other plots just like them that
+don't actually communicate a message. They just kind of look beautiful. And so the point of statistical
+graphics is both to look pretty and to be you know, enjoyable to look at,
+but more importantly, to communicate scientific
+information to the reader. So bewaring ridiculograms is an important
+component of making sure your plots are interpretable.
